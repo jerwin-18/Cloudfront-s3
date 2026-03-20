@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>SKYCONN LITE</title>
+</head>
+
+<body>
+  <nav>
+    <ul class="nav__links">
+      <div class="nav__logo">SKYCONN LITE</div>
+      <li class="link"><a href="#home-anchor">HOME</a></li>
+      <li class="link"><a href="#about-anchor">ABOUT</a></li>
+      <li class="link"><a href="#booking-section">SEARCH FLIGHTS</a></li>
+      <li class="link"><a href="booking-history.html">BOOKINGS HISTORY</a></li>
+      <li class="link"><a href="#footer">CONTACT US</a></li>
+      <li class="link"><a href="javascript:void(0);" onclick="openPopup('login-popup')">LOGIN</a></li>
+      <li class="link"><a href="javascript:void(0);" onclick="openPopup('sign-up-popup')">SIGN UP</a></li> <!-- Added Sign-Up Link -->
+    </ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+<!-- Login Pop-Up -->
+<div class="login-popup" id="login-popup">
+  <button class="close-btn" id="close-login" onclick="closePopup('login-popup')">&times;</button>
+  <h2 id="login-header">Login</h2>
+  <input type="email" id="login-email" placeholder="Email" />
+  <input type="password" id="login-password" placeholder="Password" />
+  <button class="login-btn" onclick="submitLogin()">Login</button>
+  <p>Don't have an account? <a href="javascript:void(0);" onclick="openPopup('sign-up-popup')">Sign up here</a></p>
+</div>
+
+<!-- Sign-Up Pop-Up -->
+<div class="sign-up-popup" id="sign-up-popup">
+  <button class="close-btn" id="close-signup" onclick="closePopup('sign-up-popup')">&times;</button>
+  <h2>Sign Up</h2>
+  <input type="text" id="signup-username" placeholder="Username" />
+  <input type="email" id="signup-email" placeholder="Email" />
+  <input type="password" id="signup-password" placeholder="Password" />
+  <input type="password" id="signup-confirm-password" placeholder="Confirm Password" />
+  <button class="sign-up-btn" onclick="submitSignup()">Sign Up</button>
+  <p>Already have an account? <a href="javascript:void(0);" onclick="openPopup('login-popup'); closePopup('sign-up-popup')">Login here</a></p>
+</div>
+
+
+
+  <header class="section__container header__container">
+    <h1 class="section__header" id="home-anchor">Find And Book<br />A Great Experience</h1>
+    <img src="header (1).jpg" alt="header" />
+  </header>
+
+  <section class="section__container booking__container" id="booking-section">
+    <div class="booking__nav">
+      <button class="class-btn">Economy Class</button>
+      <button class="class-btn">Business Class</button>
+      <button class="class-btn">First Class</button>
+    </div>
+    <form>
+      <div class="form__group">
+        <span><i class="ri-map-pin-line"></i></span>
+        <div class="input__content">
+          <div class="input__group">
+            <input type="text" />
+          </div>
+          <p>FROM</p>
+        </div>
+      </div>
+      <div class="form__group">
+        <span><i class="ri-map-pin-line"></i></span>
+        <div class="input__content">
+          <div class="input__group">
+            <input type="text" />
+          </div>
+          <p>TO</p>
+        </div>
+      </div>
+      <div class="form__group">
+        <span><i class="ri-user-3-line"></i></span>
+        <div class="input__content">
+          <div class="input__group">
+            <input type="number" />
+          </div>
+          <p>NUMBER OF TRAVELLERS</p>
+        </div>
+      </div>
+      <div class="form__group">
+        <span><i class="ri-calendar-line"></i></span>
+        <div class="input__content">
+          <div class="input__group">
+            <input type="date" />
+            <i class='bx bxs-calendar'></i>
+          </div>
+          <p>DEPARTURE DATE</p>
+        </div>
+      </div>
+
+      <button id="search-btn" class="btn">
+        <i class="ri-search-line"></i>
+      </button>
+
+    </form>
+  </section>
+
+  <section class="memories" id="about-anchor">
+    <div class="section__container memories__container">
+      <div class="memories__header">
+        <h3 class="section__header"><b>WANDER, EXPLORE, REMEMBER</b></h3>
+        <button class="view__all" onclick="toggleMemories()">View All </button>
+      </div>
+      <div class="memories__grid" id="memoriesGrid">
+        <div class="memories__card">
+          <span><i class="ri-calendar-2-line"></i></span>
+          <h4>Escape and Unwind</h4>
+          <p>Let go of the stress and embrace serenity book your flight today and escape to a destination where relaxation awaits.</p>
+        </div>
+        <div class="memories__card">
+          <span><i class="ri-shield-check-line"></i></span>
+          <h4>Travel Made Effortless</h4>
+          <p>Travel made effortless with our Smart Checklist ensuring a smooth, stress-free journey from start to finish.</p>
+        </div>
+        <div class="memories__card">
+          <span><i class="ri-bookmark-2-line"></i></span>
+          <h4>Maximize Your Savings</h4>
+          <p>Maximize your savings with unbeatable ticket prices book your next adventure without breaking the bank.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>SKYCONN LITE</h3>
+        <p>Bringing together exceptional service to make your travel experience seamless and unforgettable</p>
+      </div>
+      <div class="footer__col">
+        <h4>INFORMATION</h4>
+        <p>Home</p>
+        <p>About</p>
+        <p>Search Flights</p>
+        <p>Booking History</p>
+      </div>
+      <div class="footer__col">
+        <h4>CONTACT US</h4>
+        <p>supportbyskyconn@gmail.com</p>
+        <p>+91 83564 78450</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Function to toggle visibility of "Wander, Explore, Remember" boxes
+    function toggleMemories() {
+      var memoriesGrid = document.getElementById("memoriesGrid");
+      var viewAllButton = document.querySelector(".view__all");
+
+      // Toggle the display of the grid
+      if (memoriesGrid.style.display === "none" || memoriesGrid.style.display === "") {
+        memoriesGrid.style.display = "grid";
+        viewAllButton.textContent = "View Less"; // Change button text
+      } else {
+        memoriesGrid.style.display = "none";
+        viewAllButton.textContent = "View All"; // Change button text back
+      }
+    }
+
+    // Initially hide the "Wander, Explore, Remember" boxes
+    document.getElementById("memoriesGrid").style.display = "none";
+  </script>
+  <script>
+    function openPopup(id) {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById(id).style.display = "block";
+}
+
+function closePopup(id) {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById(id).style.display = "none";
+}
+
+// Login validation function
+function submitLogin() {
+  var email = document.getElementById("login-email").value;
+  var password = document.getElementById("login-password").value;
+
+  var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+  // Validate email and password
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid Gmail address.");
+    return;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters long.");
+    return;
+  }
+
+  // Login successful
+  alert("Logged in successfully!");
+
+  // Close the login popup
+  closePopup("login-popup");
+
+  // Show Bookings History
+  var bookingsHistory = document.getElementById("bookings-history");
+  bookingsHistory.style.display = "block";
+
+  // Scroll to Bookings History
+  bookingsHistory.scrollIntoView({ behavior: "smooth" });
+
+  // Replace Login with User Profile in Navbar
+  var loginSection = document.getElementById("login-section");
+  loginSection.innerHTML = `
+    <a href="javascript:void(0);" id="user-icon" style="display: flex; align-items: center;">
+      <i class="ri-user-line"></i> Profile
+    </a>
+  `;
+}
+
+
+
+// Sign-up validation function
+function submitSignup() {
+  var username = document.getElementById('signup-username').value;
+  var email = document.getElementById('signup-email').value;
+  var password = document.getElementById('signup-password').value;
+  var confirmPassword = document.getElementById('signup-confirm-password').value;
+
+  var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; // Ensure email ends with @gmail.com
+
+  // Validate email
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid Gmail address.");
+    return;
+  }
+
+  // Validate password length
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters long.");
+    return;
+  }
+
+  // Validate password and confirm password match
+  if (password !== confirmPassword) {
+    alert("Password and Confirm Password do not match.");
+    return;
+  }
+
+  // If validation is successful
+  alert("Signed up successfully!");
+  closePopup("sign-up-popup");
+}
+
+  </script>
+
+</body>
+
+</html>
